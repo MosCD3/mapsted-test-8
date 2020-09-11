@@ -12,7 +12,7 @@ private let reuseIdentifier = "ListCell"
 private let resuseIdentifierHeader = "HeaderCell"
 
 protocol GeneralCollectionViewControllerDelegate: AnyObject {
-    
+    func viewDidLoad()
 }
 
 
@@ -72,6 +72,8 @@ class GeneralCollectionViewController: UICollectionViewController {
                 self.collectionView.reloadData()
             }
         }
+        
+        delegate?.viewDidLoad()
         
     }
 
@@ -133,9 +135,17 @@ class GeneralCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListViewCell
         
         if let sections = self.sections, sections.count > 0, let sectionModel = sections.getElement(at: indexPath.section) {
-            cell.myModel = sectionModel.subItems?.getElement(at: indexPath.row)
+            if let cellModel = sectionModel.subItems?.getElement(at: indexPath.row) {
+                cellModel.dataSource = self.dataSource
+                cell.myModel = cellModel
+            }
+            
         } else {
-            cell.myModel = items.getElement(at: indexPath.row)
+            if let cellModel = items.getElement(at: indexPath.row) {
+                cellModel.dataSource = self.dataSource
+               cell.myModel = cellModel
+            }
+            
         }
         
         cell.backgroundColor = UIColor(hexString: "#eaeaea")

@@ -6,6 +6,16 @@
 //  Copyright © 2020 Phzio. All rights reserved.
 //
 
+fileprivate var apiBase: String {
+    get {
+        return Settings.apiBase
+    }
+}
+
+enum ModelType {
+    case buildingData, analyticsData, sessionInfo, purchase
+}
+
 enum CollectionPageDataSourceType  {
 
     case staticCollection
@@ -20,7 +30,24 @@ enum CollectionPageModel {
         switch self {
             
         case .buildingsDataPage:
-            return .staticCollection
+            return .dynamicCollection
+        }
+    }
+}
+
+//http://positioning-test.mapsted.com/api/Values/GetBuildingData/
+//http://positioning-test.mapsted.com/api/Values/GetAnalyticData/
+
+enum APIUri: String, CaseIterable {
+    
+    case buildingsUri, analyticsUri
+    var uri: String? {
+        switch self {
+        case .buildingsUri:
+            return "\(apiBase)/GetBuildingData/"
+            
+        case .analyticsUri:
+            return "\(apiBase)/GetAnalyticData/"
         }
     }
 }

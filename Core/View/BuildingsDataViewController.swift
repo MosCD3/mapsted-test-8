@@ -8,35 +8,40 @@
 
 import UIKit
 
-class BuildingsDataViewController: GeneralCollectionViewController {
 
+protocol BuildingsDataViewControllerDelegate: AnyObject {
+    func viewDidLoad()
+}
+class BuildingsDataViewController: GeneralCollectionViewController {
     
     init(coordinator: GenericCoordinatorProtocol) {
         
+        //Section subs
         let section1Items: [CollectionViewItem] = [
-                   CollectionViewItem(label: "Purchase Costs",
+                   CollectionViewItem(label: "Manufacturer",
                                       cellHeight: 60 ,
-                                      itemTag: "zoneInfo"),
-                   CollectionViewItem(label: "Zone Info.",
+                                      itemTag: "manufacturerInfo"),
+                   CollectionViewItem(label: "Category",
                                       cellHeight: 60,
-                                      itemTag: "zoneInfo"),
-                   CollectionViewItem(label: "My Listings",
+                                      itemTag: "categoryInfo"),
+                   CollectionViewItem(label: "Country",
                                       cellHeight: 60,
-                                      itemTag: "viewMyListings"),
-                   CollectionViewItem(label: "Sign Out",
+                                      itemTag: "countryInfo"),
+                   CollectionViewItem(label: "State",
                                       cellHeight: 60,
-                                      itemTag: "logOut")]
+                                      itemTag: "stateInfo")]
         
         let section2Items: [CollectionViewItem] = [
-                   CollectionViewItem(label: "Purchase Costs",
+                   CollectionViewItem(label: "Item",
                                       cellHeight: 60 ,
-                                      itemTag: "zoneInfo"),
-                   CollectionViewItem(label: "Zone Info.",
-                                      cellHeight: 60,
-                                      itemTag: "zoneInfo")]
+                                      itemTag: "itemsInfo")]
         
-        let section3Items: [CollectionViewItem] = [CollectionViewItem(label: "Purchase Costs", cellHeight: 60 , itemTag: "zoneInfo")]
+        let section3Items: [CollectionViewItem] = [
+            CollectionViewItem(label: "Building",
+                               cellHeight: 60 ,
+                               itemTag: "buildingInfo")]
         
+        //Main Sections
         let items: [CollectionViewItem] = [
             CollectionViewItem(label: "Purchase Costs",
                                cellHeight: 60,
@@ -59,7 +64,6 @@ class BuildingsDataViewController: GeneralCollectionViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     /*
     // MARK: - Navigation
@@ -71,4 +75,11 @@ class BuildingsDataViewController: GeneralCollectionViewController {
     }
     */
 
+}
+
+
+extension BuildingsDataViewController:  BuildingDataManagerDelegate {
+    func gotBuildingInfo() {
+        ()
+    }
 }

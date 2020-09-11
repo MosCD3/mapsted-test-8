@@ -20,6 +20,8 @@ class Settings: SettingsProtocol {
         }
     }
     
+    public static let apiBase: String = "http://positioning-test.mapsted.com/api/Values"
+    
     init() {
         
     }

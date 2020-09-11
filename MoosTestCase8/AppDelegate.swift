@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let coordinator = MainCoordinator(appWindow: window!, uiConfig: uiConfig)
+        
+        AlertService.shared.setCoordinator(coordinator: coordinator)
+        
         coordinator.startApp(uiConfig: uiConfig, settingsProvider: settings, serverConfig: serverConfig)
         self.coordinator = coordinator
         

@@ -16,6 +16,7 @@ protocol GenericCoordinatorProtocol {
                   serverConfig: ServerConfigurationProtocol)
     
     func navToBuildingData()
+    func getCurrentVC() ->UIViewController?
 }
 
 protocol MainCoordinatorEventDelegate: AnyObject {
@@ -28,6 +29,10 @@ class MainCoordinator: GenericCoordinatorProtocol {
     
     let uiConfig: UIConfigurationProtocol
     let appWindow: UIWindow
+    
+    //MARK:Controllers/Screens
+    var buildingsPageController: BuildingDataManager?
+    var buildingsPageScreen: BuildingsDataViewController?
     
     init(appWindow: UIWindow,
          uiConfig: UIConfigurationProtocol) {
@@ -50,8 +55,23 @@ class MainCoordinator: GenericCoordinatorProtocol {
     }
     
     func navToBuildingData() {
-        let vc = BuildingsDataViewController(coordinator: self)
-        self.navController?.pushViewController(vc, animated: true)
+        
+        let buildingsManager = BuildingDataManager(mainCoordinator: self)
+        let buildingsScreen = buildingsManager.getViewController()
+       
+        self.buildingsPageController = buildingsManager
+        self.buildingsPageScreen = buildingsScreen
+        
+        self.buildingsPageController?.delegate = self.buildingsPageScreen
+        self.buildingsPageScreen?.delegate = self.buildingsPageController as? GeneralCollectionViewControllerDelegate
+        
+         self.navController?.pushViewController(buildingsScreen, animated: true) 
+        
+        
+    }
+    
+    func getCurrentVC() ->UIViewController? {
+        return appWindow.rootViewController
     }
     
     //MARK: Private properties

@@ -17,6 +17,7 @@ class CollectionViewItem: CollectionViewItemBase {
     var accessoryIconName: String?
     var isSection: Bool = false
     var subItems: [CollectionViewItem]?
+    weak var dataSource: CollectionViewDataSourceProtocol?
     
     init(label: String,
          iconName: String? = nil,

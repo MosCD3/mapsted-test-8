@@ -20,6 +20,18 @@
 		B4312BFD250B3D7A004937FC /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312BFC250B3D7A004937FC /* PickerView.swift */; };
 		B4312C00250B4459004937FC /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312BFE250B4459004937FC /* HeaderCollectionViewCell.swift */; };
 		B4312C01250B4459004937FC /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4312BFF250B4459004937FC /* HeaderCollectionViewCell.xib */; };
+		B4312C03250BB040004937FC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C02250BB040004937FC /* APIService.swift */; };
+		B4312C05250BB440004937FC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C04250BB440004937FC /* Models.swift */; };
+		B4312C07250BB534004937FC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C06250BB534004937FC /* AlertService.swift */; };
+		B4312C0A250BB670004937FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C09250BB670004937FC /* Utils.swift */; };
+		B4312C0C250BB6CD004937FC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C0B250BB6CD004937FC /* Reachability.swift */; };
+		B4312C0E250BB8CC004937FC /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C0D250BB8CC004937FC /* ProgressService.swift */; };
+		B4312C11250BBF0B004937FC /* BuildingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C10250BBF0B004937FC /* BuildingDataManager.swift */; };
+		B4312C13250BC01D004937FC /* ControllersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C12250BC01D004937FC /* ControllersBase.swift */; };
+		B4312C15250BCE0A004937FC /* MappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C14250BCE0A004937FC /* MappingService.swift */; };
+		B4312C17250BCEEA004937FC /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C16250BCEEA004937FC /* Building.swift */; };
+		B4312C19250BCF85004937FC /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C18250BCF85004937FC /* BaseModel.swift */; };
+		B4312C1B250BD8EB004937FC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4312C1A250BD8EB004937FC /* Analytics.swift */; };
 		B4DAC415250B249D0059168A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAC414250B249D0059168A /* AppDelegate.swift */; };
 		B4DAC419250B249D0059168A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAC418250B249D0059168A /* WelcomePage.swift */; };
 		B4DAC41E250B24A30059168A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DAC41D250B24A30059168A /* Assets.xcassets */; };
@@ -70,6 +82,18 @@
 		B4312BFC250B3D7A004937FC /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		B4312BFE250B4459004937FC /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4312BFF250B4459004937FC /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		B4312C02250BB040004937FC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B4312C04250BB440004937FC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B4312C06250BB534004937FC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		B4312C09250BB670004937FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B4312C0B250BB6CD004937FC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B4312C0D250BB8CC004937FC /* ProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
+		B4312C10250BBF0B004937FC /* BuildingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDataManager.swift; sourceTree = "<group>"; };
+		B4312C12250BC01D004937FC /* ControllersBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersBase.swift; sourceTree = "<group>"; };
+		B4312C14250BCE0A004937FC /* MappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingService.swift; sourceTree = "<group>"; };
+		B4312C16250BCEEA004937FC /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		B4312C18250BCF85004937FC /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		B4312C1A250BD8EB004937FC /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		B4DAC411250B249D0059168A /* MoosTestCase8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoosTestCase8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DAC414250B249D0059168A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DAC418250B249D0059168A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
@@ -153,6 +177,10 @@
 				B4312BEB250B336F004937FC /* CollectionViewDataSource.swift */,
 				B4312BED250B33BC004937FC /* Enums.swift */,
 				B4312BEF250B3484004937FC /* CollectionViewItem.swift */,
+				B4312C04250BB440004937FC /* Models.swift */,
+				B4312C16250BCEEA004937FC /* Building.swift */,
+				B4312C18250BCF85004937FC /* BaseModel.swift */,
+				B4312C1A250BD8EB004937FC /* Analytics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				B4312BF4250B35E1004937FC /* LogService.swift */,
+				B4312C02250BB040004937FC /* APIService.swift */,
+				B4312C06250BB534004937FC /* AlertService.swift */,
+				B4312C0D250BB8CC004937FC /* ProgressService.swift */,
+				B4312C14250BCE0A004937FC /* MappingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,6 +220,24 @@
 				B4312BFC250B3D7A004937FC /* PickerView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B4312C08250BB661004937FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B4312C09250BB670004937FC /* Utils.swift */,
+				B4312C0B250BB6CD004937FC /* Reachability.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B4312C0F250BBEF8004937FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4312C10250BBF0B004937FC /* BuildingDataManager.swift */,
+				B4312C12250BC01D004937FC /* ControllersBase.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B4DAC408250B249D0059168A = {
@@ -248,6 +298,8 @@
 		B4DAC444250B27890059168A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B4312C0F250BBEF8004937FC /* Controllers */,
+				B4312C08250BB661004937FC /* Utils */,
 				B4312BF3250B35C7004937FC /* Services */,
 				B4312BE9250B3263004937FC /* Models */,
 				B4DAC44E250B2AE40059168A /* extentions */,
@@ -535,20 +587,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4312C07250BB534004937FC /* AlertService.swift in Sources */,
 				B4DAC44D250B2A9B0059168A /* UIConfiguration.swift in Sources */,
 				B4DAC450250B2AF10059168A /* UIColor.swift in Sources */,
 				B4312BFD250B3D7A004937FC /* PickerView.swift in Sources */,
+				B4312C15250BCE0A004937FC /* MappingService.swift in Sources */,
 				B4DAC454250B2D730059168A /* ServerConfig.swift in Sources */,
 				B4DAC419250B249D0059168A /* WelcomePage.swift in Sources */,
 				B4312BF8250B36A3004937FC /* ListViewCell.swift in Sources */,
+				B4312C05250BB440004937FC /* Models.swift in Sources */,
+				B4312C03250BB040004937FC /* APIService.swift in Sources */,
+				B4312C11250BBF0B004937FC /* BuildingDataManager.swift in Sources */,
 				B4DAC44B250B296F0059168A /* GeneralCollectionViewController.swift in Sources */,
 				B4DAC447250B27A90059168A /* MainCoordinator.swift in Sources */,
+				B4312C17250BCEEA004937FC /* Building.swift in Sources */,
 				B4DAC456250B2DA90059168A /* Settings.swift in Sources */,
 				B4DAC415250B249D0059168A /* AppDelegate.swift in Sources */,
 				B4312BE8250B31C7004937FC /* BuildingsDataViewController.swift in Sources */,
+				B4312C0C250BB6CD004937FC /* Reachability.swift in Sources */,
 				B4312BF2250B358F004937FC /* Array.swift in Sources */,
+				B4312C1B250BD8EB004937FC /* Analytics.swift in Sources */,
+				B4312C0A250BB670004937FC /* Utils.swift in Sources */,
+				B4312C13250BC01D004937FC /* ControllersBase.swift in Sources */,
 				B4312BF5250B35E1004937FC /* LogService.swift in Sources */,
 				B4312BEC250B336F004937FC /* CollectionViewDataSource.swift in Sources */,
+				B4312C0E250BB8CC004937FC /* ProgressService.swift in Sources */,
+				B4312C19250BCF85004937FC /* BaseModel.swift in Sources */,
 				B4312BEE250B33BC004937FC /* Enums.swift in Sources */,
 				B4312C00250B4459004937FC /* HeaderCollectionViewCell.swift in Sources */,
 				B4DAC452250B2B830059168A /* UIImage.swift in Sources */,
@@ -650,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -704,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
