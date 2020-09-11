@@ -1,0 +1,6 @@
+framework module Pods_MoosTestCase8_MoosTestCase8UITests {
+  umbrella header "Pods-MoosTestCase8-MoosTestCase8UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
