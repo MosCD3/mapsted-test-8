@@ -9,7 +9,7 @@
 import Foundation
 
 protocol BuildingDataManagerDelegate: AnyObject {
-    func gotBuildingInfo()
+    
 }
 
 class BuildingDataManager: ControllersBase {
@@ -19,13 +19,11 @@ class BuildingDataManager: ControllersBase {
     
     public func getViewController() -> BuildingsDataViewController {
     
-        let vc = BuildingsDataViewController(coordinator: self.mainCoordinator)
+        let vc = BuildingsDataViewController(coordinator: self.mainCoordinator, uiConfig: self.uiConfig)
         return vc
     }
 }
 
 extension BuildingDataManager: BuildingsDataViewControllerDelegate {
-    func viewDidLoad() {
-        print("please load data")
-    }
+
 }

@@ -24,15 +24,18 @@ class GeneralCollectionViewController: UICollectionViewController {
     var sections: [CollectionViewItem]?
     var items: [CollectionViewItem]?
     var dataSource: CollectionViewDataSourceProtocol
+    var uiConfig: UIConfigurationProtocol
     
     
     
     init(mainCoordinator: GenericCoordinatorProtocol?,
          items: [CollectionViewItem]?,
-         dataSource: CollectionViewDataSourceProtocol) {
+         dataSource: CollectionViewDataSourceProtocol,
+         uiConfig: UIConfigurationProtocol) {
         self.mainCoordinator = mainCoordinator
         self.items = items
         self.dataSource = dataSource
+        self.uiConfig = uiConfig
         
         if let modelItems = items  {
             let sections = modelItems.filter { row in
@@ -66,10 +69,15 @@ class GeneralCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         //if this page has dynamic content, load it
         if dataSource.sourceType() == .dynamicCollection {
+            ProgressService.shared.show()
             dataSource.loadCollectionItemsData {
                 items in
-                self.items = items
+                if let itemsArr = items {
+                   self.items = items
+                }
                 self.collectionView.reloadData()
+               
+                ProgressService.shared.hide()
             }
         }
         
@@ -124,19 +132,19 @@ class GeneralCollectionViewController: UICollectionViewController {
     //Row Cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let items = self.items else {
+        guard let items = self.sections else {
             LogService.shared.log(message: "92 Items nil!", type: .minor)
             return UICollectionViewCell()
         }
-        
-        
-
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListViewCell
         
         if let sections = self.sections, sections.count > 0, let sectionModel = sections.getElement(at: indexPath.section) {
             if let cellModel = sectionModel.subItems?.getElement(at: indexPath.row) {
+                
+                cell.uiConfig = self.uiConfig
                 cellModel.dataSource = self.dataSource
+                
                 cell.myModel = cellModel
             }
             
@@ -208,8 +216,12 @@ class GeneralCollectionViewController: UICollectionViewController {
 extension GeneralCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        return CGSize(width: collectionView.bounds.size.width, height: 64)
+        
+        var height:CGFloat = 0
+        if let visible = sections?.getElement(at: section)?.sectionVisible, visible {
+            height = 64
+        }
+        return CGSize(width: collectionView.bounds.size.width, height: height)
     }
     
     
@@ -221,6 +233,7 @@ extension GeneralCollectionViewController: UICollectionViewDelegateFlowLayout {
         var cellWidth = collectionView.frame.width
         var cellHeight = CGFloat(defaultCellHeight)
         
+        
         if
             let items = self.items,
             let item = items.getElement(at: indexPath.row) {
@@ -230,6 +243,8 @@ extension GeneralCollectionViewController: UICollectionViewDelegateFlowLayout {
             if let _h = item.height {
                 cellHeight = CGFloat(_h)
             }
+            
+            
         }
         return CGSize(width: cellWidth, height: cellHeight)
     }

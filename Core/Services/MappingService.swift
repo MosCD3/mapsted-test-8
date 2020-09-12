@@ -8,7 +8,11 @@
 
 import Foundation
 import SwiftyJSON
-class ModelMapping {
+
+protocol ModelMappingProtocol  {
+    func map(data:JSON, type: ModelType) -> Any?
+}
+class ModelMapping: ModelMappingProtocol {
     func map(data:JSON, type: ModelType) -> Any? {
         
         switch type {
@@ -70,11 +74,8 @@ class ModelMapping {
                     cost: jsonObject["cost"].double ?? 0))
             }
             return purchases
-            
-        default:
-            LogService.shared.error(message: "Cannot find mapping action for uri:\(type)", type: .logicalError)
-        }
         
-        return nil
+        }
+    
     }
 }

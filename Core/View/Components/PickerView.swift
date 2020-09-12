@@ -14,6 +14,7 @@ class PickerView : UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
  
     var pickerData : [String]!
     var pickerTextField : UITextField!
+    var selectionHandler : ((String) -> Void)?
  
     init(pickerData: [String], dropdownField: UITextField) {
         
@@ -35,6 +36,14 @@ class PickerView : UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
             }
         }
 
+    }
+    
+    convenience init(pickerData: [String], dropdownField: UITextField, onSelect selectionHandler : @escaping (String) -> Void) {
+        
+        self.init(pickerData: pickerData, dropdownField: dropdownField)
+        self.selectionHandler = selectionHandler
+        
+        
     }
  
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +69,7 @@ class PickerView : UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTextField.text = pickerData[row]
+        selectionHandler?(pickerData[row])
         pickerView.endEditing(true)
     }
     

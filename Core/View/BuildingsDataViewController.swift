@@ -10,13 +10,15 @@ import UIKit
 
 
 protocol BuildingsDataViewControllerDelegate: AnyObject {
-    func viewDidLoad()
+    
 }
 class BuildingsDataViewController: GeneralCollectionViewController {
     
-    init(coordinator: GenericCoordinatorProtocol) {
+    init(coordinator: GenericCoordinatorProtocol, uiConfig: UIConfigurationProtocol) {
         
         //Section subs
+        
+       
         let section1Items: [CollectionViewItem] = [
                    CollectionViewItem(label: "Manufacturer",
                                       cellHeight: 60 ,
@@ -58,7 +60,12 @@ class BuildingsDataViewController: GeneralCollectionViewController {
         
 
         
-        super.init(mainCoordinator: coordinator, items: items, dataSource: CollectionViewDataSource(pageMdoel: CollectionPageModel.buildingsDataPage, itemsArray: items))
+        super.init(mainCoordinator: coordinator,
+                   items: items,
+                   dataSource: CollectionViewDataSource(pageMdoel: CollectionPageModel.buildingsDataPage,
+                                                        itemsArray: items,
+                                                        mapper: ModelMapping()),
+                   uiConfig: uiConfig)
     }
     
     required init?(coder: NSCoder) {

@@ -81,7 +81,7 @@ class APIService: APIServiceProtocol {
         
         logMessage(msg: "Headers: \(String(describing: headers))")
         
-        showProgress()
+//        showProgress()
         
         
         //Processing parameters before sending
@@ -125,7 +125,7 @@ class APIService: APIServiceProtocol {
                 if errorFound {
                     callback(ApiResponse(data: nil, message: errorUser, popUpHandled: false))
                 }
-                self.hideProgress()
+//                self.hideProgress()
         }
     }
 }

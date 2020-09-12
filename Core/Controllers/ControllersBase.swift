@@ -11,7 +11,11 @@ import Foundation
 open class ControllersBase {
     
     var mainCoordinator: GenericCoordinatorProtocol
-    init(mainCoordinator: GenericCoordinatorProtocol) {
+    var uiConfig: UIConfigurationProtocol
+    
+    init(mainCoordinator: GenericCoordinatorProtocol,
+         uiConfig: UIConfigurationProtocol) {
         self.mainCoordinator = mainCoordinator
+        self.uiConfig = uiConfig
     }
 }

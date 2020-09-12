@@ -56,16 +56,14 @@ class MainCoordinator: GenericCoordinatorProtocol {
     
     func navToBuildingData() {
         
-        let buildingsManager = BuildingDataManager(mainCoordinator: self)
+        let buildingsManager = BuildingDataManager(mainCoordinator: self,
+                                                   uiConfig: self.uiConfig)
         let buildingsScreen = buildingsManager.getViewController()
        
         self.buildingsPageController = buildingsManager
         self.buildingsPageScreen = buildingsScreen
         
-        self.buildingsPageController?.delegate = self.buildingsPageScreen
-        self.buildingsPageScreen?.delegate = self.buildingsPageController as? GeneralCollectionViewControllerDelegate
-        
-         self.navController?.pushViewController(buildingsScreen, animated: true) 
+        self.navController?.pushViewController(buildingsScreen, animated: true)
         
         
     }

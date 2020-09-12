@@ -16,13 +16,6 @@ class ProgressService {
     
     func show(message: String? = nil) {
         
-        guard !isDisplayed else {
-            LogService.shared.log(message: "Progress already displayed", type: .minor)
-            return
-        }
-        
-        isDisplayed = true
-        
         if let status = message {
             SVProgressHUD.show(withStatus: status)
         } else {

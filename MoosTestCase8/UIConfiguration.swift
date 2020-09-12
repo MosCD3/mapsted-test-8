@@ -12,16 +12,24 @@ import UIKit
 
 
 protocol UIConfigurationProtocol {
-    var homeImage: UIImage {get}
+    var sectionHeaderBackground: UIColor {get}
+    var cellBackground: UIColor {get}
+    var dropdownCellBackground: UIColor {get}
+    
 }
 
 class UIConfiguration: UIConfigurationProtocol {
-
-    let homeImage = UIImage.localImage("home-icon", template: true)
- 
-
-    func configureUI() {
-        
-        //MARK: Configure basic UI here
+    var sectionHeaderBackground: UIColor {
+        return UIColor(hexString: "#A4EBF5")
     }
+    
+    var cellBackground: UIColor {
+        return UIColor(hexString: "#F3F3F3")
+    }
+    
+    var dropdownCellBackground: UIColor {
+        return UIColor(hexString: "#CFD8DC")
+    }
+    
+    
 }

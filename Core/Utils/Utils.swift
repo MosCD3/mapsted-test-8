@@ -13,4 +13,8 @@ struct Utils {
     static func isInternetConnected() -> Bool {
         return Reachability.isConnectedToNetwork()
     }
+    
+    static func formateDouble(_ value: Double) -> Double {
+        return (value * 100).rounded() / 100
+    }
 }

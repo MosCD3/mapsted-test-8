@@ -16,6 +16,7 @@ class CollectionViewItem: CollectionViewItemBase {
     var label: String
     var accessoryIconName: String?
     var isSection: Bool = false
+    var sectionVisible: Bool = true
     var subItems: [CollectionViewItem]?
     weak var dataSource: CollectionViewDataSourceProtocol?
     
@@ -26,12 +27,14 @@ class CollectionViewItem: CollectionViewItemBase {
          cellHeight: Double?,
          itemTag: String? = nil,
          isSection: Bool = false,
+         sectionVisible: Bool = true,
          subItems: [CollectionViewItem]? = nil) {
     
         self.label = label
         self.iconName = iconName
         self.accessoryIconName = accessoryIconName
         self.isSection = isSection
+        self.sectionVisible = sectionVisible
         self.subItems = subItems
         
         super.init()
